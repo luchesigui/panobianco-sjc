@@ -1,0 +1,39 @@
+---
+type Anchor = {
+  href?: string;
+};
+
+type Button = {
+  type?: "button" | "submit";
+};
+
+type SharedProps = {
+  className?: string;
+  skew?: boolean;
+};
+
+type Props = (Anchor | Button) & SharedProps;
+
+const props = Astro.props as Props;
+const { className = "", skew = false } = props;
+const href = (props as Anchor).href;
+const type = (props as Button).type ?? "button";
+
+const baseClasses =
+  "px-4 bg-primary-500 hover:bg-primary-600 shadow-lg text-white relative  hover:after:bg-primary-600";
+const skewClasses =
+  "ml-2 before:content-[''] before:h-full before:w-[0.7rem] before:absolute before:bg-primary-500 before:top-0 before:left-0 before:-translate-x-[6px] before:-skew-x-[10deg] hover:before:bg-primary-600 after:content-[''] after:h-full after:w-[0.7rem] after:absolute after:bg-primary-500 after:top-0 after:right-0 after:translate-x-[6px] after:-skew-x-[10deg]";
+const classes = `${baseClasses} ${className} ${skew ? skewClasses : ""}`;
+---
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes}>
+      <slot />
+    </button>
+  )
+}

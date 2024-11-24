@@ -1,0 +1,36 @@
+---
+const faqs = [
+  {
+    question: "Quando será a inauguração?",
+    answer:
+      "A inauguração está marcada para o próximo mês. Cadastre-se para receber informações exclusivas!",
+  },
+  {
+    question: "Posso fazer uma aula experimental?",
+    answer:
+      "Sim, oferecemos aulas experimentais durante a semana de inauguração.",
+  },
+  {
+    question: "Quais modalidades estarão disponíveis?",
+    answer: "Teremos musculação, funcional, yoga, spinning e muito mais.",
+  },
+];
+---
+
+<section class="faq py-10">
+  <div class="container mx-auto">
+    <h2 class="text-3xl text-center font-bold">Perguntas Frequentes</h2>
+    <div class="mt-8 space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="bg-gray-100 p-4 rounded shadow">
+            <summary class="cursor-pointer font-semibold">
+              {faq.question}
+            </summary>
+            <p class="mt-2 text-gray-700">{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

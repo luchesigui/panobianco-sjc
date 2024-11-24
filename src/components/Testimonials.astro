@@ -1,0 +1,57 @@
+---
+import cardio from "../images/cardio.png";
+import fitdance from "../images/fitdance.png";
+import mais from "../images/mais.png";
+import musculacao from "../images/musculacao.png";
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-8">
+      Conheça as nossas modalidades
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Fitdance -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img src={fitdance.src} alt="Fitdance" class="w-12 h-12 mx-auto mb-4" />
+        <h3 class="text-xl font-bold text-primary-500 mb-4">Fitdance</h3>
+        <p class="text-gray-600">
+          Um estilo de dança que reúne diferentes estilos musicais e
+          coreografias que são sucessos.
+        </p>
+      </div>
+      <!-- Musculação -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img
+          src={musculacao.src}
+          alt="Musculação"
+          class="w-12 h-12 mx-auto mb-4"
+        />
+        <h3 class="text-xl font-bold text-primary-500 mb-4">Musculação</h3>
+        <p class="text-gray-600">
+          Modalidade que usa aparelhos fixos e pesos livres. O Aluno terá todos
+          os aparelhos na academia à sua disposição.
+        </p>
+      </div>
+      <!-- Cardio -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img src={cardio.src} alt="Cardio" class="w-12 h-12 mx-auto mb-4" />
+        <h3 class="text-xl font-bold text-primary-500 mb-4">Cardio</h3>
+        <p class="text-gray-600">
+          O Cardio visa adquirir resistência física através do fortalecimento do
+          sistema cardiovascular com exercícios de baixa e alta intensidade do
+          tipo aeróbicos (corrida, ciclismo, e HIT).
+        </p>
+      </div>
+      <!-- E muito mais -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <img src={mais.src} alt="Mais" class="w-12 h-12 mx-auto mb-4" />
+        <h3 class="text-xl font-bold text-primary-500 mb-4">E muito mais</h3>
+        <p class="text-gray-600">
+          Temos diversas opções de aulas, consulte as disponíveis com a unidade
+          de interesse.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

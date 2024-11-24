@@ -1,0 +1,38 @@
+---
+const benefits = [
+  {
+    icon: "🏢",
+    title: "Estrutura Moderna",
+    description: "Sala de musculação, aeróbicos e dança.",
+  },
+  {
+    icon: "🕒",
+    title: "Horários Flexíveis",
+    description: "A academia perfeita para sua rotina.",
+  },
+  {
+    icon: "🏋️‍♂️",
+    title: "Melhores Equipamentos",
+    description: "Equipamentos novos e modernos.",
+  },
+];
+---
+
+<section class="benefits py-20">
+  <div class="container mx-auto">
+    <h2 class="text-3xl text-center font-bold">
+      Por que escolher nossa academia?
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      {
+        benefits.map((benefit) => (
+          <div class="benefit-card text-center p-6 border rounded">
+            <span class="text-5xl">{benefit.icon}</span>
+            <h3 class="text-xl mt-4 font-semibold">{benefit.title}</h3>
+            <p class="mt-2 text-gray-700">{benefit.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="cta py-20 bg-zinc-800 text-white text-center">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold">Não perca essa oportunidade!</h2>
+    <p class="mt-4 text-lg">
+      Cadastre-se agora e aproveite as promoções de inauguração.
+    </p>
+    <form action="/cadastro" method="POST" class="mt-6 flex justify-center">
+      <input
+        type="text"
+        name="name"
+        placeholder="Seu Nome"
+        class="mr-2 px-2 py-2 min-w-[240px]"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Seu E-mail"
+        class="mr-2 px-2 py-2 min-w-[240px]"
+        required
+      />
+      <Button>Quero Me Inscrever!</Button>
+    </form>
+  </div>
+</section>
