@@ -1,0 +1,38 @@
+.hero {
+  background-color: #2a2f31;
+  background-image: url("../images/galaxy.jpg");
+  background-attachment: fixed;
+  background-size: 140%;
+
+  @media (min-width: 1024px) {
+    background-size: 60%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      height: 100%;
+      background-color: #f15927;
+      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    &::after {
+      background-image: url("../images/lucas-lucco.png");
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 360px;
+      height: 500px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      filter: grayscale(1);
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

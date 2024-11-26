@@ -1,28 +1,24 @@
 ---
-import heroImage from "../images/hero.jpg";
 import Button from "./Button.astro";
+import "./Hero.css";
 ---
 
-<div class="bg-zinc-800 flex items-center justify-between">
-  <div class="text-white ml-auto">
-    <h1 class="text-4xl font-extrabold sm:text-5xl uppercase italic">
-      <span class="text-primary-500">Panobianco</span>
-      <br /> Jd. Satélite 🛰️
-    </h1>
-    <p class="mt-4 text-lg max-w-md">
-      Garanta sua vaga e aproveite planos com descontos exclusivos de
-      inauguração.
-    </p>
-    <div class="mt-6 flex items-center gap-4">
-      <Button skew href="#" className="py-2">Garantir minha vaga</Button>
+<div
+  class="hero h-screen max-h-[600px] relative flex items-center text-center md:text-left"
+>
+  <div class="container">
+    <div class="text-white ml-auto">
+      <h1 class="text-4xl font-extrabold sm:text-5xl uppercase italic">
+        <span class="text-primary-500">Panobianco</span>
+        <br /> Jd. Satélite 🛰️
+      </h1>
+      <p class="mt-4 text-lg max-w-md mx-auto md:mx-0">
+        Pré-inauguração! Garanta sua vaga e venha tenha um corpo de outro mundo
+        com a gente.
+      </p>
+      <Button skew href="#" className="py-2 mt-6 inline-block"
+        >Garantir minha vaga</Button
+      >
     </div>
-  </div>
-
-  <div class="lg:w-1/2 [clip-path:polygon(15%_0%,100%_0%,100%_100%,0%_100%)]">
-    <img
-      src={heroImage.src}
-      alt="Panobianco Jd. Satélite Banner"
-      class="scale-150 -translate-x-[70px]"
-    />
   </div>
 </div>
