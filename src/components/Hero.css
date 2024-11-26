@@ -4,7 +4,7 @@
   background-attachment: fixed;
   background-size: 140%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 860px) {
     background-size: 60%;
 
     &::before {
@@ -33,6 +33,13 @@
       &:hover {
         filter: grayscale(0);
       }
+    }
+  }
+
+  @media (max-height: 500px) {
+    &::after {
+      height: 380px;
+      left: 53%;
     }
   }
 }
