@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	darkMode: 'class',
 	theme: {
 		extend: {
 			colors: {
@@ -15,6 +16,10 @@ export default {
 					800: "#912C0E",
 					900: "#77240B",
 				},
+				background: "var(--background)",
+				foreground: "var(--foreground)",
+				secondary: "var(--secondary)",
+				border: "var(--border)",
 			},
 		}
 	},

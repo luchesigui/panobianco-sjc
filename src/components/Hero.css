@@ -3,6 +3,13 @@
   background-image: url("../images/galaxy.jpg");
   background-attachment: fixed;
   background-size: 140%;
+  transition: background-color 0.3s ease;
+}
+
+/* Light mode hero styles */
+:root:not(.dark) .hero {
+  background-color: #e5e7eb;
+}
 
   @media (min-width: 860px) {
     background-size: 60%;

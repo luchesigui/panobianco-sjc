@@ -1,0 +1,149 @@
+---
+// No imports needed for this basic header
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo/Brand -->
+      <div class="flex items-center">
+        <a href="/" class="text-xl font-bold text-foreground hover:text-primary-500 transition-colors">
+          <span class="text-primary-500">Panobianco</span> Academia
+        </a>
+      </div>
+
+      <!-- Navigation & Theme Toggle -->
+      <div class="flex items-center space-x-4">
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#benefits" class="text-foreground hover:text-primary-500 transition-colors">
+            Benefícios
+          </a>
+          <a href="#testimonials" class="text-foreground hover:text-primary-500 transition-colors">
+            Depoimentos
+          </a>
+          <a href="#faq" class="text-foreground hover:text-primary-500 transition-colors">
+            FAQ
+          </a>
+        </nav>
+
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          class="p-2 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground transition-all duration-200 border border-border"
+          aria-label="Toggle theme"
+        >
+          <!-- Sun icon (for light mode) -->
+          <svg
+            id="sun-icon"
+            class="w-5 h-5 hidden dark:block"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+          <!-- Moon icon (for dark mode) -->
+          <svg
+            id="moon-icon"
+            class="w-5 h-5 block dark:hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button
+          id="mobile-menu-toggle"
+          class="md:hidden p-2 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground transition-all duration-200 border border-border"
+          aria-label="Toggle mobile menu"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-border bg-background/95 backdrop-blur-sm">
+      <nav class="py-4 space-y-2">
+        <a
+          href="#benefits"
+          class="block px-4 py-2 text-foreground hover:text-primary-500 hover:bg-secondary/20 rounded-lg transition-all"
+        >
+          Benefícios
+        </a>
+        <a
+          href="#testimonials"
+          class="block px-4 py-2 text-foreground hover:text-primary-500 hover:bg-secondary/20 rounded-lg transition-all"
+        >
+          Depoimentos
+        </a>
+        <a
+          href="#faq"
+          class="block px-4 py-2 text-foreground hover:text-primary-500 hover:bg-secondary/20 rounded-lg transition-all"
+        >
+          FAQ
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  // Check for saved theme preference or default to 'dark'
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  
+  // Set initial theme
+  if (currentTheme === 'dark') {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+
+  // Theme toggle event listener
+  themeToggle?.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    
+    const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Mobile menu toggle functionality
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking on links
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

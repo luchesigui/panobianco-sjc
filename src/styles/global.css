@@ -1,5 +1,19 @@
 :root {
   --color-primary: "#F15927";
+  
+  /* Light theme colors */
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --secondary: #f3f4f6;
+  --border: #e5e7eb;
+}
+
+.dark {
+  /* Dark theme colors */
+  --background: #1f2937;
+  --foreground: #f9fafb;
+  --secondary: #374151;
+  --border: #4b5563;
 }
 
 body {
@@ -7,6 +21,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,

@@ -18,18 +18,18 @@ const benefits = [
 ];
 ---
 
-<section class="benefits py-20">
+<section id="benefits" class="benefits py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
   <div class="container mx-auto">
-    <h2 class="text-3xl text-center font-bold">
+    <h2 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
       Por que escolher nossa academia?
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
       {
         benefits.map((benefit) => (
-          <div class="benefit-card text-center p-6 border rounded">
+          <div class="benefit-card text-center p-6 border border-gray-200 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
             <span class="text-5xl">{benefit.icon}</span>
-            <h3 class="text-xl mt-4 font-semibold">{benefit.title}</h3>
-            <p class="mt-2 text-gray-700">{benefit.description}</p>
+            <h3 class="text-xl mt-4 font-semibold text-gray-800 dark:text-white">{benefit.title}</h3>
+            <p class="mt-2 text-gray-700 dark:text-gray-300">{benefit.description}</p>
           </div>
         ))
       }
